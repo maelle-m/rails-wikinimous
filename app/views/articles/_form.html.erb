@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="col-md-6 mx-auto">
+    <%= form_with model: @article, class: 'mt-5' do |form| %>
+
+      <div class="mb-3">
+        <%= form.label :title, "Article:", class: 'form-label' %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :content, "Content:", class: 'form-label' %>
+        <%= form.text_field :content, class: 'form-control' %>
+      </div>
+
+      <%= form.submit "Submit article", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
