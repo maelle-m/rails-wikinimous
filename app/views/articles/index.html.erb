@@ -1,13 +1,17 @@
 <div class="container mt-5">
-  <h1 class="d-flex justify-content-between mb-4">article List</h1>
-    <%= link_to "New article", new_article_path, class: "btn btn-outline-dark align-items-center mt-5" %>
-  </div>
+<head>
+  <div class="d-flex justify-content-between">
+  <h1>article list</h1>
+  <h1><%= link_to "New article", new_article_path, class: "btn btn-outline-dark" %></h1>
+ </div>
+<head>
 
+<body>
   <div class="container mt-5">
   <ul class="list-group">
      <% @articles.each do |article| %>
       <li class="list-group-item d-flex justify-content-between">
-          <% article.title %>
+          <%= article.title %>
           <span>
           <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-info btn-sm me-2' %>
           <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
@@ -16,3 +20,4 @@
     <% end %>
   </ul>
 </div>
+</body>
